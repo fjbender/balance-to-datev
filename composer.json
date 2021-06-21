@@ -1,0 +1,15 @@
+{
+    "name": "fjbender/balance-to-datev",
+    "description": "Converts Mollie Balance Reports into the DATEV CSV format",
+    "type": "project",
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Florian Bender",
+            "email": "florian.bender@mollie.com"
+        }
+    ],
+    "require": {
+        "nette/neon": "^3.2"
+    }
+}

@@ -1,0 +1,7 @@
+config:
+    # These accounts should work for merchants using SKR04
+    accounts:
+        debitor: 69999
+        clearing1: 1300
+        clearing2: 1460
+        paymentfees: 6855

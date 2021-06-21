@@ -43,6 +43,7 @@ foreach ($mollie as $mollieLine) {
     // determine transaction type and accounts
     switch ($mollieLine[1]) {
         case 'payment':
+        case 'capture':
             $datevLine[6] = $config['clearing1'];
             $datevLine[7] = $config['debitor'];
             // if the amount is negative, it's a failed payment, then it should be H, otherwise S

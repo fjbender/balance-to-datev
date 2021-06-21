@@ -100,9 +100,10 @@ foreach ($mollie as $mollieLine) {
     // amount as absolute
     $datevLine[0] = number_format(abs((float)$mollieLine[7]), 2, ',', '');
     $lineCounter++;
-    $datev[] = $datevLine;
     // Festschreibung fixed value
     $datevLine[113] = 0;
+    $datev[] = $datevLine;
+
 }
 
 $datevFp = fopen('mollie-datev.csv', 'x') or die("Could not create mollie-datev.csv. Maybe the file already exists?");

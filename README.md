@@ -18,7 +18,7 @@ The converter expects a Mollie Balance report for a whole month in its directory
 Once you provided a Mollie Balance report in the directory, simply run `php converter.php`. You'll see something like:
 
 ```
-Read mollie-balance.csv, 697 lines processed.
+Read mollie-balance.csv, 698 lines processed.
 DATEV report written to mollie-datev.csv with 698 lines.
 ```
 ## License

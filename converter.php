@@ -20,7 +20,7 @@ $datev[0] = str_getcsv('Umsatz (ohne Soll/Haben-Kz);Soll/Haben-Kennzeichen;WKZ U
 
 // parse Mollie report
 $mollieFp = fopen('mollie-balance.csv', 'r') or die('Mollie Report could not be opened. Expected file mollie-balance.csv');
-$lines = 0;
+$lines = 1;
 $mollie = [];
 while (($line = fgetcsv($mollieFp, 2048, ',')) !== false) {
     $mollie[] = $line;
@@ -95,15 +95,15 @@ foreach ($mollie as $mollieLine) {
             $datevLine[8] = 506;
             break;
         default:
-            echo "Warning: Unsupported transaction type " . $mollieLine[1] . " in line " . $lineCounter;
+            echo "Error: Unsupported transaction type " . $mollieLine[1] . " in line " . $lineCounter . "\n";
+            die();
     }
     // amount as absolute
     $datevLine[0] = number_format(abs((float)$mollieLine[7]), 2, ',', '');
-    $lineCounter++;
     // Festschreibung fixed value
     $datevLine[113] = 0;
     $datev[] = $datevLine;
-
+    $lineCounter++;
 }
 
 $datevFp = fopen('mollie-datev.csv', 'x') or die("Could not create mollie-datev.csv. Maybe the file already exists?");
